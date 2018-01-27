@@ -13,8 +13,8 @@ class Song
         @@song_cnt += 1
         @@artists << artist
         @@genres << genre
-        @@genre_count.each { |g, cnt| g == genre ? cnt += 1 }
-        @@artist_count.each { |a, cnt| a == artist ? cnt += 1 }
+        @@genre_count.each { |g, cnt| g == genre ? cnt += 1 : false}
+        @@artist_count.each { |a, cnt| a == artist ? cnt += 1 : false}
     end
 
     def self.count
