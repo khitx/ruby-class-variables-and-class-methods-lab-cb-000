@@ -11,7 +11,9 @@ class Song
         @artist = artist
         @genre = genre
         @@count += 1
-        @@artists << artist unless @@artists.include?(artist)
+        unless @@artists.include?(artist)
+          @@artists << artist
+        end
         @@genres << genre unless @@genres.include?(genre)
         @@genre_count.each { |g, cnt| g == genre ? cnt += 1 : false}
         @@artist_count.each { |a, cnt| a == artist ? cnt += 1 : false}
