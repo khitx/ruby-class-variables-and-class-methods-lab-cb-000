@@ -1,3 +1,5 @@
+require pry
+
 class Song
     attr_accessor :name, :artist, :genre
     @@count = 0
@@ -13,6 +15,7 @@ class Song
         @@count += 1
         if @@artists.include?(artist)
         else
+          binding.pry
           @@artists << artist
         end
         @@genres << genre unless @@genres.include?(genre)
